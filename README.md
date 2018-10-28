@@ -1,5 +1,5 @@
 ﻿# *Vue.js* 与 *jQuery* 的比较
-[TOC]
+[Toc]
 
 ### 介绍
 
