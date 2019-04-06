@@ -54,7 +54,7 @@
   采用`frameset`框架
   ![图old6.jpg](https://github.com/LLL4040/images/blob/master/old6.jpg?raw=true)
 * 新版页面比较简洁，不过缩放时美观性影响较大，有的组件会被挤走消失
-  ![图new5.png](https://github.com/LLL4040/images/blob/master/new5.png?raw=true)
+  ![图new5.png](https://github.com/LLL4040/images/blob/master/new5.png?raw=true)  
   采用`bootstrap`布局
 
 ### 优化建议
