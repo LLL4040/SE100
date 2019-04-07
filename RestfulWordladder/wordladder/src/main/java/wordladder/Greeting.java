@@ -3,7 +3,6 @@ package wordladder;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.HashSet;
 import java.util.LinkedList;
 
@@ -73,7 +72,7 @@ public class Greeting {
 
     //在指定位置替换一个字母
     public static String replaceOneChar(String s, int pos, String newChar){
-        if (s.length() != 0){
+        if (s.length() != 0 && pos >= 0 && pos < s.length()){
             StringBuilder newS = new StringBuilder(s);
             int end = pos + 1;
             newS.replace(pos, end, newChar);
@@ -91,6 +90,8 @@ public class Greeting {
         //判断字典是否为空
         if (wordDict.size() == 0)
             return ladder;
+
+        wordDict.remove(wordQueue.getFirst());
 
         while (!wordQueue.isEmpty()){
             int count = wordQueue.size();
