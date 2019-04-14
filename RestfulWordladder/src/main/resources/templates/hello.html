@@ -9,5 +9,11 @@
     <form th:action="@{/logout}" method="post">
         <input type="submit" value="Sign Out"/>
     </form>
+    <h3> Word Ladder </h3>
+    <form id="login" name="login" method ="get" action="/greeting">
+        <p>Begin word : <input id="begin" name="begin" type="text" /></p>
+        <p>End word : <input id="end" name="end" type="text" /></p>
+        <p><input id="show"  name ="show" type="submit" value="submit" /></p>
+    </form>
 </body>
 </html>
