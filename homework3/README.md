@@ -4,10 +4,26 @@
 
 ## User guideline
 
-* 分别使用`$ docker pull lyl4040/function`和`$ docker pull lyl4040/login`拉取两个镜像
+* 分别使用以下命令拉取镜像
 
-* 使用`$ docker run -itd -p 8080:8080 --name=function lyl4040/function`和`$ docker run -itd -p 8088:8088 --link=function --name=login lyl4040/login`创建container
+```bash
+$ docker pull lyl4040/function
+$ docker pull lyl4040/login
+```
 
-* 访问`localhost:8088`即可看到首页，在前端点击对应按钮可以进行交互
+* 依次输入以下命令创建docker容器
 
-* 补充：我用的是windows系统里的linux虚拟机，运行`$ docker-machine ip default`可以得到默认ip是192.168.99.100，所以在前端form提交的action里写的是绝对路径，使用了这个ip
+```bash
+$ docker network create net
+$ docker run --network net --name host -p 8080:8080 lyl4040/function
+$ docker run --network net --name checkhost -p 9090:9090 lyl4040/login
+```
+
+* 打开浏览器输入以下url进行测试
+    1. 首次输入<http://localhost:8080/wordladder/search?begin=data&end=code>会因为未登录页面会显示“未登录请先登录”
+    2. 输入<http://localhost:8080/wordladder/login?username=user&password=123>会显示登录成功“true”
+    3. 再次输入<http://localhost:8080/wordladder/search?begin=data&end=code>会显示wordladder的结果
+
+* 补充：
+    1. 使用windows系统里的linux虚拟机时，运行`$ docker-machine ip default`可以得到默认ip是192.168.99.100，所以测试的时候要把localhost换成上述linux虚拟机的ip
+    2. 两个Dockerfile分别在Wordladder和login目录下的docker文件夹里
