@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <title>Hello World!</title>
+</head>
+<body>
+    <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
+    <form th:action="@{/logout}" method="post">
+        <input type="submit" value="Sign Out"/>
+    </form>
+    <h3> Word Ladder </h3>
+    <form id="login" name="login" method ="get" action="http://192.168.99.100:8080/greeting">
+        <p>Begin word : <input id="begin" name="begin" type="text" /></p>
+        <p>End word : <input id="end" name="end" type="text" /></p>
+        <p><input id="show"  name ="show" type="submit" value="submit" /></p>
+    </form>
+</body>
+</html>
