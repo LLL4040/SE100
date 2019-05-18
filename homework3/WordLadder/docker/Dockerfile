@@ -3,4 +3,4 @@ VOLUME /tmp
 ADD function-1.0-SNAPSHOT.jar app.jar
 ADD dictionary.txt dictionary.txt
 ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
-EXPOSE 8080
+EXPOSE 9091
